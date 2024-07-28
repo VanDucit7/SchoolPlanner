@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<resources>
+    <string name="app_name">School Planner</string>
+    <string name="welcome_configure"> Welcome! we will walk you through how to configure the app for the first time</string>
+    <string name="let_started">Let's get started</string>
+    <string name="configure_now">Configure now</string>
+    <string name="configure_now_des">Choose the right settings for you to get the best experience right from the start</string>
+    <string name="configure_later">Configure later</string>
+    <string name="configure_later_des">Get going fast by using the recommended settings. You can change settings at any time</string>
+
+    <string name="title_welcome">Welcome</string>
+    <string name="title_configuration">Configuration</string>
+    <string name="configure_terms_des">Configure your terms or give them custom name (optional)</string>
+    <string name="lbl_title">Title</string>
+    <string name="lbl_start_date">Start Date</string>
+    <string name="lbl_end_date">End Date</string>
+    <string name="lbl_term">Term</string>
+    <string name="lbl_add_term">Add new term</string>
+    <string name="lbl_configure">Configure</string>
+    <string name="lbl_save">Save</string>
+
+    <string name="next">Next</string>
+    <plurals name="new_terms">
+        <item quantity="one">%1$d st Term</item>
+        <item quantity="two">%1$d nd Term</item>
+        <item quantity="few">%1$d rd Term</item>
+        <item quantity="other">%1$d th Term</item>
+    </plurals>
+</resources>
