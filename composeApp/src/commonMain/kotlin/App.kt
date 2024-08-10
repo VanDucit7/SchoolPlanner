@@ -1,4 +1,4 @@
-import androidx.compose.material3.MaterialTheme
+import androidx.compose.material.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.navigation.NavHostController
@@ -6,19 +6,15 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
-import data.database.dao.TermDao
 import org.jetbrains.compose.resources.StringResource
 import org.jetbrains.compose.ui.tooling.preview.Preview
 import org.koin.compose.KoinContext
-import org.koin.compose.viewmodel.koinViewModel
-import org.koin.core.annotation.KoinExperimentalAPI
 import schoolplanner.composeapp.generated.resources.Res
 import schoolplanner.composeapp.generated.resources.title_configuration
 import schoolplanner.composeapp.generated.resources.title_welcome
 import screen.ConfigurationScreen
 import screen.WelcomeScreen
 import ui.presentation.configterm.ConfigTermScreen
-import ui.presentation.configterm.ConfigTermViewModel
 
 @Composable
 @Preview
