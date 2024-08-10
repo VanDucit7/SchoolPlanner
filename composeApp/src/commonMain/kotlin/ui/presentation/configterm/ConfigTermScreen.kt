@@ -18,14 +18,16 @@ import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.layout.wrapContentHeight
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.itemsIndexed
-import androidx.compose.material3.BottomSheetScaffold
-import androidx.compose.material3.Button
-import androidx.compose.material3.HorizontalDivider
-import androidx.compose.material3.Text
-import androidx.compose.material3.TextButton
-import androidx.compose.material3.TextField
-import androidx.compose.material3.rememberBottomSheetScaffoldState
-import androidx.compose.material3.rememberStandardBottomSheetState
+import androidx.compose.material.BottomSheetScaffold
+import androidx.compose.material.BottomSheetValue
+import androidx.compose.material.Button
+import androidx.compose.material.Divider
+import androidx.compose.material.ExperimentalMaterialApi
+import androidx.compose.material.Text
+import androidx.compose.material.TextButton
+import androidx.compose.material.TextField
+import androidx.compose.material.rememberBottomSheetScaffoldState
+import androidx.compose.material.rememberBottomSheetState
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
@@ -58,13 +60,13 @@ import schoolplanner.composeapp.generated.resources.lbl_title
 import schoolplanner.composeapp.generated.resources.next
 import ui.components.TermItemView
 
-@OptIn(KoinExperimentalAPI::class)
+@OptIn(KoinExperimentalAPI::class, ExperimentalMaterialApi::class)
 @Composable
 fun ConfigTermScreen() {
     val viewModel = koinViewModel<ConfigTermViewModel>()
     val uiState by viewModel.uiState.collectAsState()
     val scaffoldState = rememberBottomSheetScaffoldState(
-        bottomSheetState = rememberStandardBottomSheetState(skipHiddenState = false)
+        bottomSheetState = rememberBottomSheetState(initialValue = BottomSheetValue.Collapsed)
     )
 
     val coroutineScope = rememberCoroutineScope()
@@ -83,7 +85,7 @@ fun ConfigTermScreen() {
                         endDate = endDate
                     )
                     coroutineScope.launch {
-                        scaffoldState.bottomSheetState.hide()
+                        scaffoldState.bottomSheetState.collapse()
                     }
                 }
             )
@@ -134,8 +136,8 @@ fun ConfigTermScreen() {
                                 scaffoldState.bottomSheetState.expand()
                             }
                         })
-                        HorizontalDivider(
-                            modifier = Modifier.padding(start = 56.dp),
+                        Divider(
+                            modifier = Modifier.fillMaxWidth().padding(start = 56.dp),
                             thickness = 1.dp,
                             color = Color.LightGray
                         )
